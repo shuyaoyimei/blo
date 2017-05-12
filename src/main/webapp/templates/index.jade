@@ -1,0 +1,23 @@
+doctype
+html(lang="en")
+    head
+        include layout/head
+    body
+        include layout/navbar
+        center
+            .cantainer
+                h1 #{title}
+                .container
+                    span.label.label-info #{author}
+                    span.label.label-info #{date}
+                    span.label.label-info 20 times
+                    span.label.label-info
+                        a(href="") tags
+                    span.label.label-info
+                        a(href="") cats
+                .container
+                    p #{message}
+
+
+
+        include layout/footer

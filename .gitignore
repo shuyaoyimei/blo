@@ -1,4 +1,13 @@
 *.class
+*.iml
+.idea
+target
+.project
+.settings
+.DS_Store
+log
+
+
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

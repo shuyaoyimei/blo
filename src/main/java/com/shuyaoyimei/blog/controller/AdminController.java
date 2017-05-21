@@ -32,4 +32,9 @@ public class AdminController {
         return "admin/login";
     }
 
+    @RequestMapping(value = "/add_article",method = GET)
+    public String addArticle(){
+        return "admin/add_article";
+
+    }
 }

@@ -18,4 +18,5 @@ import java.util.Properties;
 @ComponentScan(basePackages = {"com.shuyaoyimei.blog"},
         excludeFilters = {@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE,value = EnableWebMvc.class)})
 public class RootConfig {
+
 }

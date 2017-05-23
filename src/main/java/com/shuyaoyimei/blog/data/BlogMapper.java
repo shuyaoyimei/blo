@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Repository;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -15,12 +16,12 @@ import java.util.List;
  */
 @Mapper
 public interface BlogMapper {
-    @Select(" SELECT id, title, author, create_time, update_time,mesage FROM articles WHERE id = #{id}")
+    @Select(" SELECT id, title, author, create_time, update_time,mesage FROM blog WHERE id = #{id}")
     Article findById(@Param("id") long id);
 
-    @Insert("INSERT INTO articles (id,title,author,create_time,message) VALUES (#{id},#{title},#{author},#{create_time},#{message})")
+    @Insert("INSERT INTO blog (id,title,author,create_time,message) VALUES (#{id},#{title},#{author},#{create_time},#{message})")
     int save(Article article);
 
-    @Select("SELECT id, title, author, create_time, update_time,mesage FROM articles ")
+    @Select("SELECT id, title, author, create_time, update_time,message FROM blog ORDER BY id desc ")
     List<Article> findAllArticles();
 }

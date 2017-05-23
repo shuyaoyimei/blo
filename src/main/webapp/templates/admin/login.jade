@@ -12,7 +12,7 @@ html(lang="en")
                             input(type="hidden", name="_csrf", value="#{_csrf.token}")
                             input.form-control(type="text",name="username",placeholder="Email")
                             input.form-control(type="password",name="password",placeholder="Password")
-                            .checkbox
+                            span rememberme
                                 label
-                                    input.form-control(type="checkbox",name="remeberme") rememberme
+                                    input.center(type="checkbox",name="remeberme")
                             button.btn.btn-primary.btn-block(type="submit") Login

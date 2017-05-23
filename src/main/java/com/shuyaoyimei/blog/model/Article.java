@@ -7,17 +7,20 @@ import java.util.Date;
 /**
  * Created by mafu on 5/8/17.
  */
-public class Article {
+public class Article implements Comparable<Article> {
     private  long id;
     @NotNull
     private  String title;
+
     @NotNull
     private  String author;
 
     @NotNull
-    private  Date create_date;
+    private  Date create_time;
 
-    private  Date update_date;
+    private  Date update_time;
+
+    @NotNull
     private  String message;
 
     public void setId(Long id) {
@@ -33,15 +36,17 @@ public class Article {
     }
 
     public void setCreate_date(Date create_date) {
-        this.create_date = create_date;
+        this.create_time = create_date;
     }
 
-    public void setUpdate_date(Date update_date) {
-        this.update_date = update_date;
+    public void setUpdate_time(Date update_date) {
+        this.update_time = update_date;
     }
     public void setMessage(String message) {
         this.message = message;
     }
+
+
     public Long getId() {
         return id;
     }
@@ -50,14 +55,25 @@ public class Article {
         return title;
     }
 
-    public Date getCreate_date() {
-        return create_date;
+    public String getAuthor() {
+        return author;
     }
 
-    public Date getUpdate_date() {
-        return update_date;
+    public Date getCreate_time() {
+        return create_time;
     }
+
+    public Date getUpdate_time() {
+        return update_time;
+    }
+
     public String getMessage() {
         return message;
     }
+
+
+    public int compareTo(Article o){
+        return this.getId().compareTo(o.getId());
+    }
+
 }

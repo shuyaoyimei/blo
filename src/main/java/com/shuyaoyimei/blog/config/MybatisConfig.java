@@ -23,6 +23,10 @@ public class MybatisConfig extends org.apache.ibatis.session.Configuration {
         dataSource.setUrl("jdbc:mysql://localhost:3306/spring_blog");
         dataSource.setUsername("root");
         dataSource.setPassword("123456");
+
+//        init
+
+
         return dataSource;
     }
     @Bean

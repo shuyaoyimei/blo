@@ -5,18 +5,20 @@ html(lang="en")
     body
         include layout/navbar
         center
-            .cantainer
-                h1 #{title}
-                .container
-                    span.label.label-info #{author}
-                    span.label.label-info #{date}
-                    span.label.label-info 20 times
-                    span.label.label-info
-                        a(href="") tags
-                    span.label.label-info
-                        a(href="") cats
-                .container
-                    p #{message}
+            for article in articleList
+                .cantainer
+                    h1 #{article.getTitle()}
+                    .container
+                        span.hidden.label-info #{article.getId()}
+                        span.label.label-info #{article.getAuthor()}
+                        span.label.label-info #{article.getCreate_time()}
+                        span.label.label-info 20 times
+                        span.label.label-info
+                            a(href="") tags
+                        span.label.label-info
+                            a(href="") cats
+                    .container
+                        p #{article.getMessage()}
 
 
 

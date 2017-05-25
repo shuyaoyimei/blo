@@ -28,7 +28,7 @@ public class HomeController {
         model.addAttribute("author","shuyaoyimei");
         model.addAttribute("date",new Date());
         model.addAttribute("message","this is the first article");
-        List<Article> articles = blogService.getAllArticle();
+        List<Article> articles = blogService.getAllNotDelArticles();
         model.addAttribute("articleList",articles);
         return "index";
     }

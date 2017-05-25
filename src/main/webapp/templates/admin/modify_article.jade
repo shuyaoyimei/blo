@@ -11,12 +11,13 @@ html(lang="en")
         .row
             .col-md-4.col-md-offset-4.login-container
                 .login-panel
-                    form.signin-form(method="post",action="/admin/add_article")
+                    form.signin-form(method="post",action="/admin/article/modify_article")
+                        input.hidden.col-lg-1.form-control(name="id",id="id",value="#{article.getId()}")
                         label.col-lg-2.control-label Title
-                        input.form-control(name="title",id="title",type="text")
+                        input.form-control(name="title",id="title",type="text",value="#{article.getTitle()}")
                         label.col-lg-2.control-label author
-                        input.form-control(name="author",id="author",type="text")
+                        input.form-control(name="author",id="author",type="text",value="#{article.getAuthor()}")
                         label.col-lg-2.control-label text
-                        textarea.form-control(rows="5",id="message",name="message" placeholder="")
-                        button.btn.btn-primary.btn-block(type="submit") subbmit
+                        textarea.form-control(rows="5",id="message",name="message") #{article.getMessage()}
+                        button.btn.btn-primary.btn-block(type="submit") modify
         include layout/footer

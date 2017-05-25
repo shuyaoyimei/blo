@@ -23,6 +23,14 @@ public class Article implements Comparable<Article> {
     @NotNull
     private  String message;
 
+
+    private Boolean del;
+//    private String stringDate;
+//
+//    public void transStrToDate(){
+//        this.create_time = new Date(this.stringDate);
+//    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -46,6 +54,13 @@ public class Article implements Comparable<Article> {
         this.message = message;
     }
 
+    public void setDel(Boolean del) {
+        this.del = del;
+    }
+
+    public Boolean getDel() {
+        return del;
+    }
 
     public Long getId() {
         return id;

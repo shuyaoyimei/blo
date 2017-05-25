@@ -29,4 +29,18 @@ public class BlogService {
     public List<Article> getAllArticle(){
         return blogMapper.findAllArticles();
     }
+
+    public List<Article> getAllNotDelArticles(){
+        return blogMapper.findAllNotDelArticles();
+    }
+
+    public void updateArticle(Article article){blogMapper.update(article);}
+
+    public void deleteArticle(long id){
+        blogMapper.delete(id);
+    }
+
+    public void reduceArticle(long id){
+        blogMapper.reduce(id);
+    }
 }

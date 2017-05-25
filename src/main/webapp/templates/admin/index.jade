@@ -6,25 +6,24 @@ html(lang="en")
     body
         include layout/navbar
         center
-        for article in articleList
-            .cantainer
-                h1 #{article.getTitle()}
-                .container
-                    span.hidden.label-info #{article.getId()}
-                    span.label.label-info #{article.getAuthor()}
-                    span.label.label-info #{article.getCreate_time()}
-                    span.label.label-info 20 times
-                    span.label.label-info
-                        a(href="") tags
-                    span.label.label-info
-                        a(href="") cats
-                    span.label.label-info
-                        a(href="/") 修改
-                    span.label.label-info
-                        a(href="") 回收文章
-                .container
-                    p #{article.getMessage()}
 
+            table.table.table-striped.table-hover
+                thead Article List
+                tbody
+                    each article,i in articleList
+                        tr
+                            td #{i+1}
+                            td.col-lg-6 #{article.getTitle()}
+                            if article.getUpdate_time()
+                                td.col-sm-2 #{article.getUpdate_time()}
+                            else
+                                td.col-sm-2 #{article.getCreate_time()}
 
+                            td.col-sm-1
+                                a(href="/admin/article/#{article.getId()}/modify") Modify
+                            td.col-sm-1
+                                a(href="/admin/article/#{article.getId()}/delete") Delete
+                            td.col-sm-1
+                                a(href="/admin/article/#{article.getId()}/restore") Restore
 
         include layout/footer
